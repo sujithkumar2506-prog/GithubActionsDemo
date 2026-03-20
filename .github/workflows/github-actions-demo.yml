@@ -7,6 +7,12 @@ jobs:
     steps:
       - name: First step
         run: echo "This is the first message in logs"
+
+      - name: Github event name
+        run: echo "This is event is triggered by ${{GITHUB.event_name}} in this branch ${{github.ref}}"
+
+      - name: Github runner os
+        run: echo "THis job is running on env- ${{runner.environment}} and Os- ${{runner.os}}, name- ${{runner.name}}"
       
       - name: Second step
         run: echo "THis is second message in logs"
