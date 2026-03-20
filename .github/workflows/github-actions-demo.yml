@@ -1,1 +1,11 @@
-
+name: GITHUB Actions Exercise
+run-name: ${{GITHUB.actor}} is testing our branch
+on: [push]
+jobs:
+  exploregithub:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is the first message in logs"
+      - run: echo "THis is second message in logs"
+      
+      
