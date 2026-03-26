@@ -1,17 +1,16 @@
-name: Main workflow
+name: Main Pipeline
+
 on:
   workflow_dispatch:
+
 jobs:
   build:
-    uses: ./.github/workflows/build.yaml
+    uses: ./.github/workflows/build.yml
+
   test:
     needs: build
     uses: ./.github/workflows/test.yml
+
   deploy:
     needs: test
     uses: ./.github/workflows/deploy.yml
-    
-    
-    
-    
-  -
