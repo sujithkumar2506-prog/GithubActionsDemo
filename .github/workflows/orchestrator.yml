@@ -1,22 +1,15 @@
 name: Main workflow
 on:
   workflow_dispatch:
-
 jobs:
-  
-
   build:
-    runs-on: 'ubuntu-latest'
-    steps:
-      - uses: ./github/workflows/build.yaml
+    uses: ./.github/workflows/build.yaml
   test:
-    runs-on: 'ubuntu-latest'
-    steps:
-      - uses: ./github/workflows/test.yml
+    needs: build
+    uses: ./.github/workflows/test.yml
   deploy:
-    runs-on: 'ubuntu-latest'
-    steps:
-      - uses: ./github/workflows/deploy.yml
+    needs: test
+    uses: ./.github/workflows/deploy.yml
     
     
     
