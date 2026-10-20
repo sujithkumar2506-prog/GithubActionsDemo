@@ -1,8 +1,7 @@
 name: GITHUB Actions Exercise
-run-name: ${{GITHUB.actor}} is testing our branch
-on: 
-  push: 
-  workflow_dispatch: :
+run-name: ${{github.actor}} is testing our branch
+on:
+  workflow_dispatch:
 jobs:
   exploregithub:
     runs-on: ubuntu-latest
@@ -11,10 +10,10 @@ jobs:
         run: echo "This is the first message in logs"
 
       - name: Github event name
-        run: echo "This is event is triggered by ${{GITHUB.event_name}} in this branch ${{github.ref}}"
+        run: echo "This is event is triggered by ${{github.event_name}} in this branch ${{github.ref}}"
 
       - name: Github runner os
-        run: echo "THis job is running on env- ${{runner.environment}} and Os- ${{runner.os}}, name- ${{runner.name}}"
+        run: echo "THis job is running on env- and Os- ${{runner.os}}, name- ${{runner.name}}"
 
       - name: Check out repository code
         uses: actions/checkout@v5
